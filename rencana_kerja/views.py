@@ -23,12 +23,12 @@ class BuatRencanaView(APIView):
         if get_role:
             if get_role.filter(role__bidang__bidang_id=14):
                 datas = BuatRencana.objects.filter(
-                    user__role__bidang__bidang_id=14)
+                    user__role__bidang__bidang_id=14).values()
                 # return Response(datas, content_type='application/json')
             if get_role.filter(role__bidang__bidang_id=16):
                 datas = BuatRencana.objects.filter(
-                    user__role__bidang__bidang_id=16)
+                    user__role__bidang__bidang_id=16).values()
                 # return Response(datas, content_type='application/json')
         else:
-            datas = BuatRencana.objects.filter(user=user)
+            datas = BuatRencana.objects.filter(user__user_id=user).values()
         return Response(datas, content_type='applicaton/json')
