@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import BuatRencanaView
+from .views import ListRencanaView, BuatRencanaView
 
 urlpatterns = [
-    path('list-jadwal', BuatRencanaView.as_view())
+    path('list-jadwal', ListRencanaView.as_view()),
+    path('buat-jadwal', BuatRencanaView.as_view())
 ]

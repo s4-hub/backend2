@@ -28,7 +28,7 @@ class SignupView(APIView):
                         email=email, password=password, name=name)
 
                     user.save()
-                    print(User.objects.all())
+                    # print(User.objects.all())
                     return Response({'success': 'User berhasil dibuat'})
         else:
             return Response({'error': 'Password tidak cocok'})
